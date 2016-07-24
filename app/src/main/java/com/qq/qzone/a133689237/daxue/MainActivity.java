@@ -1,14 +1,18 @@
 package com.qq.qzone.a133689237.daxue;
 
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
+import android.app.Fragment;
 
 public class MainActivity extends SingleFragmentActivity {
 
     @Override
-    public Fragment CreateFragment() {
-        return null;
+    public Fragment CreateFragment_welcome() {
+        return Fragment_wlcome.newInstance();
+    }
+
+    @Override
+    public Fragment CreateFragment_main() {
+        return Fragment_main.newInstance();
     }
 
 }
