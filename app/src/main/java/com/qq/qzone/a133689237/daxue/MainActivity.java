@@ -1,6 +1,5 @@
 package com.qq.qzone.a133689237.daxue;
 
-
 import android.app.Fragment;
 
 public class MainActivity extends SingleFragmentActivity {

@@ -2,23 +2,29 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#1d214c" >
 
     <ImageView
+        android:id="@+id/welcome_zhuan_image"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="115dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/wlcome_zhuan"
         android:layout_width="70dp"
-        android:layout_height="70dp" />
+        android:layout_height="70dp"
+        android:translationZ="4dp" />
 
     <TextView
+        android:id="@+id/welcome_text"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
+        android:textColor="#FAFAFA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="刚开始的时候，我还以为青春不会流逝"/>
+        android:textSize="17sp"
+        android:alpha="87"
+        android:text="小时候，我以为青春不会从我指缝中悄悄溜走"/>
 
 </RelativeLayout>

@@ -1,11 +1,9 @@
 package com.qq.qzone.a133689237.daxue;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
@@ -16,7 +14,6 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.acitvity_fragment_single);
         fm = getFragmentManager();
 
@@ -26,9 +23,10 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
                 fm.beginTransaction().add(R.id.fragment_container, CreateFragment_welcome())
                         .commit();
 
-                try { Thread.sleep(3000); } catch (Exception e) { }
+                try { Thread.sleep(4500); } catch (Exception e) { }
                 fm.beginTransaction().replace(R.id.fragment_container, CreateFragment_main())
                         .commit();
+
             }
         }).start();
 
