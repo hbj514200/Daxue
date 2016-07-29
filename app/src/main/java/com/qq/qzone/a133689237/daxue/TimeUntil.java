@@ -27,10 +27,12 @@ public class TimeUntil {
     }
 
     public int minute(){
+        updata();
         return calendar.get(Calendar.MINUTE);
     }
 
     public int second(){
+        updata();
         return calendar.get(Calendar.SECOND);
     }
 
@@ -43,6 +45,10 @@ public class TimeUntil {
         if( hour>=17&&hour<19)     return "傍晚";
         if(hour>=19)               return "晚上";
         return "";
+    }
+
+    public void updata(){
+        calendar = Calendar.getInstance();
     }
 
 }
