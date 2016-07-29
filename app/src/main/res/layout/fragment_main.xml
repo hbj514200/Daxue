@@ -31,6 +31,7 @@
         android:layout_height="165dp"
         android:elevation="11dp" >
         <TextView
+            android:id="@+id/shangxiawu_text"
             android:textColor="#FAFAFA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
             android:layout_marginRight="25dp"
             android:text="下午" />
         <TextView
+            android:id="@+id/watch_num_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#FAFAFA"
@@ -48,6 +50,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="55sp"/>
         <TextView
+            android:id="@+id/nianyueri_text"
             android:padding="3dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,9 +78,10 @@
     <Button
         android:id="@+id/chose_daji_button"
         android:textSize="15sp"
-        android:text="  选 择 类 型  "
+        android:paddingBottom="-3dp"
+        android:paddingTop="-3dp"
+        android:text="     选 择 类 型     "
         android:textColor="#FAFAFA"
-        android:padding="4dp"
         android:elevation="2dp"
         android:background="@drawable/fragment_main_button"
         android:layout_marginBottom="55dp"

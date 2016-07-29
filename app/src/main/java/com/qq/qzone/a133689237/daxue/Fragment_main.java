@@ -1,8 +1,10 @@
 package com.qq.qzone.a133689237.daxue;
 
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +18,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Fragment_main extends Fragment implements View.OnClickListener {
 
@@ -24,6 +27,10 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
     public FrameLayout big_watch_di;
     public LinearLayout big_watch;
     public Button choose_Button;
+    public TextView nianyueri;
+    public TextView watch_num;
+    public TextView shangxiawu;
+    public TimeUntil mTime = new TimeUntil();
 
     public static Fragment newInstance(){
         return new Fragment_main();
@@ -37,6 +44,9 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
         big_watch_di = (FrameLayout) view.findViewById(R.id.big_watch_di);
         big_watch = (LinearLayout) view.findViewById(R.id.big_watch);
         choose_Button = (Button) view.findViewById(R.id.chose_daji_button);
+        shangxiawu = (TextView) view.findViewById(R.id.shangxiawu_text);
+        watch_num = (TextView) view.findViewById(R.id.watch_num_text);
+        nianyueri  = (TextView) view.findViewById(R.id.nianyueri_text);
 
         mToolbar = (Toolbar) view.findViewById(R.id.my_toolbar);
         ( (AppCompatActivity) getActivity() ).setSupportActionBar(mToolbar);
@@ -44,6 +54,8 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
         mToolbar.setTitle("");
 
         choose_Button.setOnClickListener(this);
+        shangxiawu.setText(mTime.qujian());
+        nianyueri.setText(mTime.year() + "年" + mTime.month() + "月" + mTime.day() + "日");
 
         startAnimator();
 
@@ -67,8 +79,8 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
         switch ( v.getId() ){
             case R.id.chose_daji_button :
                 dia_Choose_daji dialog = new dia_Choose_daji();
-                FragmentManager fm = getActivity().getFragmentManager();
-                dialog.show(fm, "CHOOSE_DAJI");
+                dialog.setTargetFragment(this, 2);
+                dialog.show(getFragmentManager(), "CHOOSE_DAJI");
                 break;
         }
     }
@@ -101,6 +113,17 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
         ShualpAnimator.start();
         TeovAnimator.start();
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (resultCode != Activity.RESULT_OK)       return;
+        if (requestCode == 2 ) {
+            int dajinum = intent.getIntExtra("DAJI", 10);
+            if(dajinum == 10)   return;
+            shuText.setText(""+dajinum);
+        }
+    }
+
 
 }
 

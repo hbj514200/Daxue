@@ -8,15 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="CustomButton" parent="Theme.AppCompat.Light">
-        <!-- 点击高亮时背景颜色 -->
-        <item name="colorControlHighlight">#2A2A2A</item>
-        <!-- 按钮正常背景颜色 -->
-        <item name="colorButtonNormal">#DCBA11</item>
-    </style>
-
     <style name="big_watch" >
         <item name="android:background">@drawable/big_watch</item>
+    </style>
+
+    <style name="mDialog" parent="AppTheme">
+        <item name="android:textColor">#FAFAFA</item>
     </style>
 
 </resources>
