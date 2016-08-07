@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/xianshi_grid"
+                android:orientation="horizontal" >
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        　　<TextView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/grid_nian"
+        android:textColor="#FAFAFA"
+        android:padding="7dp"
+        android:textSize="15sp"
+        android:text="2年"/>
+        　　<TextView
+        android:layout_height="0dp"
+        android:id="@+id/grid_yue"
+        android:textColor="#FAFAFA"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:padding="7dp"
+        android:textSize="15sp"
+        android:text="2月"/>
+        　　　<TextView
+        android:id="@+id/grid_zhou"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textColor="#FAFAFA"
+        android:padding="7dp"
+        android:textSize="15sp"
+        android:text="2周"/>
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        　　<TextView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/grid_tian"
+        android:textColor="#FAFAFA"
+        android:padding="7dp"
+        android:textSize="15sp"
+        android:text="2天"/>
+        　　<TextView
+        android:layout_height="0dp"
+        android:id="@+id/grid_xiaoshi"
+        android:textColor="#FAFAFA"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:padding="7dp"
+        android:textSize="15sp"
+        android:text="2小时"/>
+        　　　<TextView
+        android:id="@+id/grid_fenzhong"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textColor="#FAFAFA"
+        android:padding="7dp"
+        android:textSize="15sp"
+        android:text="2分钟"/>
+    </LinearLayout>
+
+</LinearLayout>

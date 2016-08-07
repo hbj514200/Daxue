@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,7 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
     public Timer timer = new Timer();
     Toolbar mToolbar;
     public TextView shuText;
-    public FrameLayout big_watch_di;
+    public ImageView big_watch_di;
     public LinearLayout big_watch;
     public Button choose_Button;
     public TextView nianyueri;
@@ -51,13 +52,13 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
                     if (mTime.second() < 10) miao = "0" + miao;
                     watch_num.setText(fen + " : " + miao);
                     ObjectAnimator suoX = ObjectAnimator.ofFloat(big_watch_di, "scaleX", 1f, 0.75f)
-                            .setDuration(100);
+                            .setDuration(85);
                     ObjectAnimator suoY = ObjectAnimator.ofFloat(big_watch_di, "scaleY", 1f, 0.75f)
-                            .setDuration(100);
-                    ObjectAnimator fangX = ObjectAnimator.ofFloat(big_watch_di, "scaleX", 0.75f, 1f)
-                            .setDuration(250);
-                    ObjectAnimator fangY = ObjectAnimator.ofFloat(big_watch_di, "scaleY", 0.75f, 1f)
-                            .setDuration(250);
+                            .setDuration(85);
+                    ObjectAnimator fangX = ObjectAnimator.ofFloat(big_watch_di, "scaleX", 0.8f, 1f)
+                            .setDuration(230);
+                    ObjectAnimator fangY = ObjectAnimator.ofFloat(big_watch_di, "scaleY", 0.8f, 1f)
+                            .setDuration(230);
                     AnimatorSet set = new AnimatorSet();
                     set.play(suoX).with(suoY).before(fangX).with(fangY);
                     set.start();
@@ -76,7 +77,7 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         Fragment_wlcome.zhuangtailanColor(getActivity(), "#10142d");
         shuText = (TextView) view.findViewById(R.id.shu_textView);
-        big_watch_di = (FrameLayout) view.findViewById(R.id.big_watch_di);
+        big_watch_di = (ImageView) view.findViewById(R.id.big_watch_di);
         big_watch = (LinearLayout) view.findViewById(R.id.big_watch);
         choose_Button = (Button) view.findViewById(R.id.chose_daji_button);
         shangxiawu = (TextView) view.findViewById(R.id.shangxiawu_text);
@@ -171,6 +172,8 @@ public class Fragment_main extends Fragment implements View.OnClickListener {
             }
         };
         timer.schedule(task, 0, 1000);
+
     }
+
 
 }

@@ -13,15 +13,19 @@
         android:background="#1d214c" />
 
     <FrameLayout
-        android:id="@+id/big_watch_di"
+        android:id="@+id/di_fragment"
         android:layout_width="250dp"
         android:layout_below="@id/my_toolbar"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="65dp"
         android:layout_height="250dp"
-        android:background="@drawable/big_watch_di"
         android:elevation="8dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" >
+        <ImageView
+            android:background="@drawable/big_watch_di"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/big_watch_di"/>
     <LinearLayout
         android:layout_gravity="center"
         android:orientation="vertical"
@@ -67,13 +71,16 @@
         android:textSize="21sp"
         android:padding="10dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/big_watch_di"
+        android:layout_below="@id/di_fragment"
         android:textColor="#FAFAFA"
         android:alpha="64"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:id="@+id/shu_textView" />
+
+    <include
+        android:id="@id/xianshi_grid" />
 
     <Button
         android:id="@+id/chose_daji_button"

@@ -1,6 +1,9 @@
 package com.qq.qzone.a133689237.daxue;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class TimeUntil {
 
@@ -49,6 +52,24 @@ public class TimeUntil {
 
     public void updata(){
         calendar = Calendar.getInstance();
+    }
+
+    public static long timecha(int daji, Date datenow){
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date d1 = df.parse("2016-09_12 8:00:00");
+            if(daji==1)             d1 = df.parse("2016-09_12 8:00:00");
+            if(daji==2)             d1 = df.parse("2015-09-12 8:00:00");
+            if(daji==3)             d1 = df.parse("2014-09-12 8:00:00");
+            if(daji==4)             d1 = df.parse("2013-09-12 8:00:00");
+            long diff = datenow.getTime() - d1.getTime();//这样得到的差值是微秒级别
+            //long days = diff / (1000 * 60 * 60 * 24);
+            //long hours = (diff-days*(1000 * 60 * 60 * 24))/(1000* 60 * 60);
+            //long minutes = (diff-days*(1000 * 60 * 60 * 24)-hours*(1000* 60 * 60))/(1000* 60);
+            return diff;
+        }
+        catch (Exception e) {}
+        return 0;
     }
 
 }
